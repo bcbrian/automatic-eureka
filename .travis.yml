@@ -9,4 +9,6 @@ cache:
   directories:
     - node_modules
 before_install:
+  - mysql -e 'CREATE USER test WITH PASSWORD 'test';'
+  - mysql -e 'ALTER USER test CREATEDB;'
   - mysql -e 'CREATE DATABASE testdb;'
