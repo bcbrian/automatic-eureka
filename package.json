@@ -7,7 +7,7 @@
     "start": "node server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
-    "test": "npm run lint && cross-env NODE_ENV=test jest"
+    "test": "cross-env NODE_ENV=test jest"
   },
   "license": "ISC",
   "dependencies": {
@@ -17,6 +17,7 @@
     "husky": "^3.0.5",
     "lint-staged": "^9.4.0",
     "mysql2": "^1.6.5",
+    "react-scripts": "^3.1.2",
     "sequelize": "^5.8.6"
   },
   "devDependencies": {
@@ -29,6 +30,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "npm run lint",
       "prettier --write",
       "git add"
     ]
