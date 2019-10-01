@@ -1,5 +1,7 @@
 language: node_js
 node_js: "12"
+env:
+  - CI=true
 services:
   - mysql
 branches:
@@ -9,7 +11,7 @@ cache:
   directories:
     - node_modules
 before_install:
-  - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('new_password') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
-  - sudo mysql_upgrade
+  - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('root') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
+#   - sudo mysql_upgrade
   - sudo service mysql restart
-  - mysql -e 'CREATE DATABASE testdb;'
+  - mysql -u 'root' -p'root' -e 'CREATE DATABASE testdb;'

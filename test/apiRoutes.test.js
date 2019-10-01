@@ -1,4 +1,4 @@
-const db = "../models";
+require("./dbInit");
 const apiRoutes = require("../routes/apiRoutes");
 
 describe("API - ROUTES", () => {
