@@ -9,9 +9,10 @@
   },
   "test": {
     "username": "root",
-    "password": "",
+    "password": "root",
     "database": "testdb",
     "host": "127.0.0.1",
+    "port": "8889",
     "socketPath": "~travis/.my.cnf",
     "dialect": "mysql",
     "logging": false

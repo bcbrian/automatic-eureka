@@ -40,5 +40,10 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/setup.js"
+    ]
   }
 }
