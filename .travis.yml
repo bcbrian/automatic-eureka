@@ -10,5 +10,5 @@ cache:
     - node_modules
 before_install:
   # - echo ";\n\n" | mysql -u root
-  - mysql -e 'USE mysql;UPDATE user SET password=PASSWORD('root') WHERE user='root';FLUSH PRIVILEGES;'
+  - mysql -e 'ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';'
   - mysql -e 'CREATE DATABASE testdb;'
