@@ -15,4 +15,3 @@ before_install:
 #   - sudo mysql_upgrade
   - sudo service mysql restart
   - mysql -u 'root' -p'root' -e 'CREATE DATABASE testdb;'
-  - mysql -u 'root' -p'root' -e 'CREATE TABLE Examples;'
