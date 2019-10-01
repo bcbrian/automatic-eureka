@@ -9,5 +9,6 @@ cache:
   directories:
     - node_modules
 before_install:
-  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('root') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+  # - echo ";\n\n" | mysql -u root
+  - mysql -e 'USE mysql;UPDATE user SET password=PASSWORD('root') WHERE user='root';FLUSH PRIVILEGES;'
   - mysql -e 'CREATE DATABASE testdb;'
